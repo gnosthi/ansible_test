@@ -1,0 +1,12 @@
+---
+
+- name: Do this imported task
+  debug: msg="This is an imported task"
+  changed_when: true
+  tags:
+    - moon:baby
+
+- name: Do this other imported task
+  debug: msg="This is yet another imported task"
+  changed_when: true
+

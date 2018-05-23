@@ -19,3 +19,9 @@
   tags:
    - tasks:fail
   when: tasks_001 is define and tasks_001 == "run" or do_fail == "run"
+
+- name: Import a task
+  import_tasks: imported_tasks.yml
+  static: yes
+  tags:
+    - tasks:import
