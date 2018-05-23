@@ -1,0 +1,21 @@
+---
+# tasks file for anstest
+
+
+- name: Include task001.yml
+  include_tasks: task001.yml
+  tags:
+    - tasks:001
+  when: task_001 is defined and task_001 == "run"
+
+- name: Include Tasks005.yml
+  include_tasks: tasks005.yml
+  tags:
+    - tasks:005
+  when: task_005 is defined and task_005 == "run"
+
+- name: Include fail_task.yml
+  include_tasks: fail_task.yml
+  tags:
+   - tasks:fail
+  when: tasks_001 is define and tasks_001 == "run" or do_fail == "run"

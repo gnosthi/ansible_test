@@ -1,0 +1,17 @@
+---
+# handlers file for anstest
+
+- name: Test Message
+  command: "echo this is a message"
+  register: test_mes
+  failed_when: test_mes.rc == 1
+
+- name: Test Variable
+  command: "echo 'This is a variable {{ var_anstest_string }}'"
+  register: test_var
+  failed_when: test_var.rc == 1
+
+- name: Test Encrypted
+  command: "echo 'This is an encrypted variable {{ var_anstest_vaulted }}'"
+  register: test_enc
+  failed_when: test_enc.rc == 1

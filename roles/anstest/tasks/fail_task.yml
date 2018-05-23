@@ -1,0 +1,8 @@
+---
+
+- name: This is a failed task
+  command: "echo This task will fail"
+  register: failed_command
+  failed_when: failed_command.rc == 0
+  notify: Test Encrypted
+

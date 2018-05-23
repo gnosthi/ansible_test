@@ -1,0 +1,9 @@
+---
+
+- hosts: localhost
+
+  vars:
+    task_005: false
+    do_fail: false
+  roles:
+    - role: anstest

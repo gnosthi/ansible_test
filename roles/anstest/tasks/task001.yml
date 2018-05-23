@@ -1,0 +1,32 @@
+---
+
+- name: Task 001
+  debug: msg="This is task001"
+  changed_when: true
+  notify: Test Message
+
+- name: Task 002
+  debug: msg="This is task002"
+  changed_when: true
+  notify: Test Message
+  tags:
+    - tasks:002
+
+- name: flush_handlers
+  meta: flush_handlers
+
+- name: Task 003
+  debug: msg="This is task003"
+  changed_when: true
+  notify: Test Variable
+  tags:
+   - tasks:003
+
+- name: Task 004
+  debug: msg="this is task004"
+  changed_when: true
+  failed_when: false
+  notify: Test Encrypted
+  tags:
+    - always
+
